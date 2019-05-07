@@ -1,6 +1,6 @@
-ARG NODE_VERSION=8.11
-
 FROM node:${NODE_VERSION}-alpine as builder
+
+ARG NODE_VERSION=8.11
 
 LABEL maintainer="SparkSwap <dev@sparkswap.com>"
 
