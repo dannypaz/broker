@@ -1,6 +1,4 @@
-FROM node:${NODE_VERSION}-alpine as builder
-
-ARG NODE_VERSION=8.11
+FROM node:8.11-alpine as builder
 
 LABEL maintainer="SparkSwap <dev@sparkswap.com>"
 
@@ -25,7 +23,7 @@ WORKDIR /home/app/broker-cli
 RUN npm install --quiet --production
 
 # Create a final image as this will be < 50% the size of the build image
-FROM node:${NODE_VERSION}-alpine as final
+FROM node:8.11-alpine as final
 
 RUN apk update
 RUN apk add bash curl
